@@ -42,7 +42,6 @@ public class ParseApplications {
                 String tag = pullParser.getName();
                 switch (eventType) {
                     case XmlPullParser.START_TAG:
-                        Log.d(TAG, "parse: Começando a tag: " + tag);
                         if ("entry".equalsIgnoreCase(tag)) {
                             inEntry = true;
                             entry = new FeedEntry();
@@ -52,7 +51,6 @@ public class ParseApplications {
                         textValue = pullParser.getText();
                         break;
                     case XmlPullParser.END_TAG:
-                        Log.d(TAG, "parse: Terminando a tag: " + tag);
                         if (inEntry) {
                             if ("entry".equalsIgnoreCase(tag)) { // </entry> ??
                                 // terminou a "entry", então armnazenar o FeedEntry no arraylist
@@ -74,12 +72,6 @@ public class ParseApplications {
                 }
                 eventType = pullParser.next();
             }
-
-            for (FeedEntry feedEntry : applications) {
-                Log.d(TAG, "******************************");
-                Log.d(TAG, feedEntry.toString());
-            }
-
         } catch (Exception ex) {
             Log.e(TAG, "parse: Erro ao fazer parse: " + ex.getMessage());
             status = false;
