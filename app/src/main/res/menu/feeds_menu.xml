@@ -4,13 +4,13 @@
 
     <item
         android:id="@+id/mnuFree"
-        android:title="Free apps" />
+        android:title="Apps Grátis" />
     <item
         android:id="@+id/mnuPaid"
-        android:title="Paid apps" />
+        android:title="Apps Pagos" />
     <item
         android:id="@+id/mnuSongs"
-        android:title="Songs" />
+        android:title="Músicas" />
     <group
         android:id="@+id/mnuGrpLimit"
         android:checkableBehavior="single">
@@ -22,7 +22,4 @@
             android:id="@+id/mnu25"
             android:title="Top 25" />
     </group>
-    <item
-        android:id="@+id/mnuRefresh"
-        android:title="Refresh" />
 </menu>
